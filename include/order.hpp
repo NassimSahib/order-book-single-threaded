@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
 #include <cstdint>
 
@@ -7,19 +7,19 @@ using Price = uint64_t;
 using Quantity = uint32_t;
 using Timestamp = uint64_t;
 
-
-enum class Side: uint8_t {
+enum class Side : uint8_t
+{
     Buy,
     Sell
 };
 
-struct Order {
-    OrderId id;
-    Timestamp timestamp;
-    Price price;
-    Quantity quantity;
-    Side side;
-
+struct Order
+{
+    OrderId id_;
+    Timestamp timestamp_;
+    Price price_;
+    Quantity quantity_;
+    Side side_;
 };
 
 static_assert(sizeof(Order) <= 32);
