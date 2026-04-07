@@ -20,12 +20,16 @@ private:
     Timestamp timestamp_;
     Price price_;
     Quantity quantity_;
+    Quantity remainingQuantity_;
     Side side_;
 public:
     OrderId getId() const;
     Price getPrice() const;
     Side getSide() const;
     Quantity getQuantity() const;
+    Quantity getRemainingQuantity();
+
+    void ReduceQuantity(Quantity quantity);
 };
 
-static_assert(sizeof(Order) <= 32);
+static_assert(sizeof(Order) <= 64);
