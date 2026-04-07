@@ -13,13 +13,19 @@ enum class Side : uint8_t
     Sell
 };
 
-struct Order
+class Order
 {
+private:
     OrderId id_;
     Timestamp timestamp_;
     Price price_;
     Quantity quantity_;
     Side side_;
+public:
+    OrderId getId() const;
+    Price getPrice() const;
+    Side getSide() const;
+    Quantity getQuantity() const;
 };
 
 static_assert(sizeof(Order) <= 32);
