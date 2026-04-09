@@ -25,7 +25,7 @@ Quantity PriceLevel::Match(Quantity quantity_to_match) {
 
     while (remaining > 0 && !orders_.empty()) {
         Order& front = Front();
-        Quantity available = front.getRemainingQuantity();
+        Quantity available = front.GetRemainingQuantity();
 
         if (available <= remaining) {
             remaining -= available;

@@ -26,4 +26,4 @@ private:
     void AddToBook(const Order &order);
 
     bool CanMatch(const Order &incoming) const;
-}
+};

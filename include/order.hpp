@@ -23,11 +23,11 @@ private:
     Quantity remainingQuantity_;
     Side side_;
 public:
-    OrderId getId() const;
-    Price getPrice() const;
-    Side getSide() const;
-    Quantity getQuantity() const;
-    Quantity getRemainingQuantity();
+    OrderId GetId() const;
+    Price GetPrice() const;
+    Side GetSide() const;
+    Quantity GetQuantity() const;
+    Quantity GetRemainingQuantity();
 
     void ReduceQuantity(Quantity quantity);
 };
