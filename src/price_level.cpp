@@ -2,7 +2,7 @@
 #include "price_level.hpp"
 
 void PriceLevel::AddOrder(const Order &order) {
-    if (order.getPrice() != price_) {
+    if (order.GetPrice() != price_) {
         throw std::logic_error("Price mismatch");
     }
     orders_.push_back(order);
@@ -28,6 +28,7 @@ Quantity PriceLevel::Match(Quantity quantity_to_match) {
         Quantity available = front.GetRemainingQuantity();
 
         if (available <= remaining) {
+            front.ReduceQuantity(available);
             remaining -= available;
             PopFront();
         } else {
